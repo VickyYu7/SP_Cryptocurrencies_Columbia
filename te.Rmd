@@ -1,0 +1,419 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+
+```{r}
+# Install from CRAN
+install.packages('RTransferEntropy')
+# Install development version from GitHub
+# devtools::install_github("BZPaper/RTransferEntropy")
+
+# load the package
+library(RTransferEntropy)
+```
+```{r}
+set.seed(12345)
+n <- 2500
+x <- rep(0, n + 1)
+y <- rep(0, n + 1)
+
+for (i in 2:(n + 1)) {
+  x[i] <- 0.2 * x[i - 1] + rnorm(1, 0, 2)
+  y[i] <- x[i - 1] + rnorm(1, 0, 2)
+}
+
+x <- x[-1]
+y <- y[-1]
+```
+
+```{r}
+install.packages('future')
+library(future)
+# enable parallel processing for all future transfer_entropy calls
+# use multicore on unix machines for better performance
+plan(multisession)
+```
+
+
+```{r}
+set.seed(12345)
+shannon_te <- transfer_entropy(x, y)
+#> Shannon's entropy on 8 cores with 100 shuffles.
+#>   x and y have length 2500 (0 NAs removed)
+#>   [calculate] X->Y transfer entropy
+#>   [calculate] Y->X transfer entropy
+#>   [bootstrap] 300 times
+#> Done - Total time 6.52 seconds
+shannon_te
+```
+
+```{r}
+
+# read the CSV file into a data frame
+btc <- read.csv("D:\\SP project\\bitcoin.csv")
+sent <- read.csv("D:\\SP project\\gt_ethereum.csv")
+
+# view the first few rows of the data frame
+# head(btc)
+```
+
+```{r}
+btc_return <- as.numeric(btc$return)
+btc_return <- btc_return[2:1766]
+
+```
+
+```{r}
+sent_return <- as.numeric(sent$return)
+sent_return <- sent_return[2:1766]
+```
+
+```{r}
+shannon_te <- transfer_entropy(sent_return, btc_return)
+```
+
+```{r}
+shannon_te
+
+```
+
+```{r}
+shannon_te2 <- transfer_entropy(sent_return, btc_return, lx = 5, ly = 5)
+```
+```{r}
+shannon_te2
+```
+```{r}
+sent_return_3 <- sent_return[2:1763]
+```
+
+```{r}
+btc_return_3 <- btc_return[5:1766]
+```
+```{r}
+shannon_te_3 <- transfer_entropy(sent_return_3, btc_return_3)
+```
+```{r}
+shannon_te_3
+```
+
+```{r}
+sent_return_1 <- sent_return[2:1765]
+btc_return_1 <- btc_return[3:1766]
+shannon_te_1 <- transfer_entropy(sent_return_1, btc_return_1)
+shannon_te_1
+
+shannon_te_11 <- transfer_entropy(sent_return_1, btc_return_1, lx = 2, ly = 2)
+shannon_te_11
+
+btc_return[1763:1765]
+btc_return_1[1762:1764]
+
+```
+
+
+```{r}
+sent_return_2 <- sent_return[2:1764]
+btc_return_2 <- btc_return[4:1766]
+shannon_te_2 <- transfer_entropy(sent_return_2, btc_return_2)
+shannon_te_2
+
+shannon_te_22 <- transfer_entropy(sent_return_2, btc_return_2, lx = 3, ly = 3)
+shannon_te_22
+```
+
+
+```{r}
+sent_return_4 <- sent_return[2:1762]
+btc_return_4 <- btc_return[6:1766]
+shannon_te_4 <- transfer_entropy(sent_return_4, btc_return_4)
+shannon_te_4
+
+shannon_te_33 <- transfer_entropy(sent_return_3, btc_return_3, lx = 4, ly = 4)
+shannon_te_33
+shannon_te_44 <- transfer_entropy(sent_return_4, btc_return_4, lx = 5, ly = 5)
+shannon_te_44
+
+```
+
+```{r}
+sent_return_5 <- sent_return[2:1761]
+btc_return_5 <- btc_return[7:1766]
+shannon_te_5 <- transfer_entropy(sent_return_5, btc_return_5)
+shannon_te_5
+
+shannon_te_55 <- transfer_entropy(sent_return_5, btc_return_5, lx = 6, ly = 6)
+shannon_te_55
+```
+
+```{r}
+sent_return_6 <- sent_return[2:1760]
+btc_return_6 <- btc_return[8:1766]
+shannon_te_6 <- transfer_entropy(sent_return_6, btc_return_6)
+shannon_te_6
+
+shannon_te_66 <- transfer_entropy(sent_return_6, btc_return_6, lx = 7, ly = 7)
+shannon_te_66
+```
+
+```{r}
+sent_return_7 <- sent_return[2:1759]
+btc_return_7 <- btc_return[9:1766]
+shannon_te_7 <- transfer_entropy(sent_return_7, btc_return_7)
+shannon_te_7
+
+shannon_te_77 <- transfer_entropy(sent_return_7, btc_return_7, lx = 8, ly = 8)
+shannon_te_77
+```
+
+
+```{r}
+sent_return_8 <- sent_return[2:1758]
+btc_return_8 <- btc_return[10:1766]
+shannon_te_8 <- transfer_entropy(sent_return_8, btc_return_8)
+shannon_te_8
+```
+
+
+```{r}
+sent_return_9 <- sent_return[2:1757]
+btc_return_9 <- btc_return[11:1766]
+shannon_te_9 <- transfer_entropy(sent_return_9, btc_return_9)
+shannon_te_9
+```
+
+```{r}
+sent2 <- read.csv("D:\\SP project\\fear&greed.csv")
+sent2
+sent2_return <- as.numeric(sent2$return)
+sent2_return <- sent2_return[2:1766]
+
+#0 lag
+shannon2_te <- transfer_entropy(sent2_return, btc_return)
+shannon2_te
+
+#1 lag
+sent2_return_1 <- sent2_return[2:1765]
+shannon2_te_1 <- transfer_entropy(sent2_return_1, btc_return_1)
+shannon2_te_1
+
+shannon2_te_11 <- transfer_entropy(sent2_return_1, btc_return_1, lx = 2, ly = 2)
+shannon2_te_11
+
+#2 lag
+sent2_return_2 <- sent2_return[2:1764]
+shannon2_te_2 <- transfer_entropy(sent2_return_2, btc_return_2)
+shannon2_te_2
+
+shannon2_te_22 <- transfer_entropy(sent2_return_2, btc_return_2, lx = 3, ly = 3)
+shannon2_te_22
+
+
+#3 lag
+sent2_return_3 <- sent2_return[2:1763]
+shannon2_te_3 <- transfer_entropy(sent2_return_3, btc_return_3)
+shannon2_te_3
+
+shannon2_te_33 <- transfer_entropy(sent2_return_3, btc_return_3, lx = 4, ly = 4)
+shannon2_te_33
+
+
+#4 lag
+sent2_return_4 <- sent2_return[2:1762]
+shannon2_te_4 <- transfer_entropy(sent2_return_4, btc_return_4)
+shannon2_te_4
+
+shannon2_te_44 <- transfer_entropy(sent2_return_4, btc_return_4, lx = 5, ly = 5)
+shannon2_te_44
+
+#5 lag
+sent2_return_5 <- sent2_return[2:1761]
+shannon2_te_5 <- transfer_entropy(sent2_return_5, btc_return_5)
+shannon2_te_5
+
+shannon2_te_55 <- transfer_entropy(sent2_return_5, btc_return_5, lx = 6, ly = 6)
+shannon2_te_55
+
+#6 lag
+sent2_return_6 <- sent2_return[2:1760]
+shannon2_te_6 <- transfer_entropy(sent2_return_6, btc_return_6)
+shannon2_te_6
+
+shannon2_te_66 <- transfer_entropy(sent2_return_6, btc_return_6, lx = 7, ly = 7)
+shannon2_te_66
+
+#7 lag
+sent2_return_7 <- sent2_return[2:1759]
+shannon2_te_7 <- transfer_entropy(sent2_return_7, btc_return_7)
+shannon2_te_7
+
+shannon2_te_77 <- transfer_entropy(sent2_return_7, btc_return_7, lx = 8, ly = 8)
+shannon2_te_77
+
+#8 lag
+sent2_return_8 <- sent2_return[2:1758]
+shannon2_te_8 <- transfer_entropy(sent2_return_8, btc_return_8)
+shannon2_te_8
+
+#9 lag
+sent2_return_9 <- sent2_return[2:1757]
+shannon2_te_9 <- transfer_entropy(sent2_return_9, btc_return_9)
+shannon2_te_9
+
+```
+
+
+
+## new version
+
+```{r}
+# process bitcoin data
+btc <- read.csv("D:\\SP project\\bitcoin.csv")
+btc_return <- as.numeric(btc$return)
+btc_return <- btc_return[2:1766]
+btc_return_1 <- btc_return[2:1765]
+btc_return_2 <- btc_return[3:1765]
+btc_return_3 <- btc_return[4:1765]
+btc_return_4 <- btc_return[5:1765]
+btc_return_5 <- btc_return[6:1765]
+btc_return_6 <- btc_return[7:1765]
+btc_return_7 <- btc_return[8:1765]
+
+
+```
+
+
+```{r}
+## version1 - (no shifting of data, only add lx,ly)
+
+sent2 <- read.csv("D:\\SP project\\2.gt_Buy_Bitcoin.csv")
+sent2_return <- as.numeric(sent2$return)
+sent2_return <- sent2_return[2:1766]
+sent2_return
+
+#0 lag
+shannon2_te <- transfer_entropy(sent2_return, btc_return)
+shannon2_te
+#1 lag
+shannon2_te_11 <- transfer_entropy(sent2_return, btc_return, lx = 2, ly = 2)
+shannon2_te_11
+#2 lag
+shannon2_te_22 <- transfer_entropy(sent2_return, btc_return, lx = 3, ly = 3)
+shannon2_te_22
+#3 lag
+shannon2_te_33 <- transfer_entropy(sent2_return, btc_return, lx = 4, ly = 4)
+shannon2_te_33
+#4 lag
+shannon2_te_44 <- transfer_entropy(sent2_return, btc_return, lx = 5, ly = 5)
+shannon2_te_44
+#5 lag
+shannon2_te_55 <- transfer_entropy(sent2_return, btc_return, lx = 6, ly = 6)
+shannon2_te_55
+#6 lag
+shannon2_te_66 <- transfer_entropy(sent2_return, btc_return, lx = 7, ly = 7)
+shannon2_te_66
+#7 lag
+shannon2_te_77 <- transfer_entropy(sent2_return, btc_return, lx = 8, ly = 8)
+shannon2_te_77
+
+```
+
+
+```{r}
+# version 2 - shifting + lx,ly
+sent2 <- read.csv("D:\\SP project\\15.twitter_btccrash_neg.csv")
+sent2_return <- as.numeric(sent2$return)
+sent2_return <- sent2_return[2:1766]
+
+sent2_return <- na.omit(sent2_return)
+sent2_return <- sent2_return[2:length(sent2_return)]
+sum(is.na(sent2_return))
+
+sent2_return[is.na(sent2_return)] <- 0
+
+sent2_return_1 <- sent2_return[1:length(sent2_return)-1]
+sent2_return_2 <- sent2_return[1:(length(sent2_return)-2)]
+sent2_return_3 <- sent2_return[1:(length(sent2_return)-3)]
+sent2_return_4 <- sent2_return[1:(length(sent2_return)-4)]
+sent2_return_5 <- sent2_return[1:(length(sent2_return)-5)]
+sent2_return_6 <- sent2_return[1:(length(sent2_return)-6)]
+sent2_return_7 <- sent2_return[1:(length(sent2_return)-7)]
+
+
+btc_return222 <- btc_return[(1765-length(sent2_return)+1):1765]
+
+#0 lag
+shannon2_te <- transfer_entropy(sent2_return, btc_return)
+shannon2_te
+#1 lag
+shannon2_te_11 <- transfer_entropy(sent2_return_1, btc_return_1, lx = 2, ly = 2)
+shannon2_te_11
+#2 lag
+shannon2_te_22 <- transfer_entropy(sent2_return_2, btc_return_2, lx = 3, ly = 3)
+shannon2_te_22
+#3 lag
+shannon2_te_33 <- transfer_entropy(sent2_return_3, btc_return_3, lx = 4, ly = 4)
+shannon2_te_33
+#4 lag
+shannon2_te_44 <- transfer_entropy(sent2_return_4, btc_return_4, lx = 5, ly = 5)
+shannon2_te_44
+#5 lag
+shannon2_te_55 <- transfer_entropy(sent2_return_5, btc_return_5, lx = 6, ly = 6)
+shannon2_te_55
+#6 lag
+shannon2_te_66 <- transfer_entropy(sent2_return_6, btc_return_6, lx = 7, ly = 7)
+shannon2_te_66
+#7 lag
+shannon2_te_77 <- transfer_entropy(sent2_return_7, btc_return_7, lx = 8, ly = 8)
+shannon2_te_77
+
+
+
+#0 lag
+shannon2_te <- transfer_entropy(sent2_return, btc_return[(1765-length(sent2_return)+1):1765])
+shannon2_te
+#1 lag
+shannon2_te_11 <- transfer_entropy(sent2_return_1, btc_return[(1765-length(sent2_return)+2):1765], lx = 2, ly = 2)
+shannon2_te_11
+#2 lag
+shannon2_te_22 <- transfer_entropy(sent2_return_2, btc_return[(1765-length(sent2_return)+3):1765], lx = 3, ly = 3)
+shannon2_te_22
+#3 lag
+shannon2_te_33 <- transfer_entropy(sent2_return_3, btc_return[(1765-length(sent2_return)+4):1765], lx = 4, ly = 4)
+shannon2_te_33
+#4 lag
+shannon2_te_44 <- transfer_entropy(sent2_return_4, btc_return[(1765-length(sent2_return)+5):1765], lx = 5, ly = 5)
+shannon2_te_44
+#5 lag
+shannon2_te_55 <- transfer_entropy(sent2_return_5, btc_return[(1765-length(sent2_return)+6):1765], lx = 6, ly = 6)
+shannon2_te_55
+#6 lag
+shannon2_te_66 <- transfer_entropy(sent2_return_6, btc_return[(1765-length(sent2_return)+7):1765], lx = 7, ly = 7)
+shannon2_te_66
+#7 lag
+shannon2_te_77 <- transfer_entropy(sent2_return_7, btc_return[(1765-length(sent2_return)+8):1765], lx = 8, ly = 8)
+shannon2_te_77
+```
+
+
+
+
+
+
+
