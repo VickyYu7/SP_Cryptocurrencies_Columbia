@@ -1,22 +1,7 @@
 ---
-title: "R Notebook"
+title: "Transfer Entropy - R Notebook"
 output: html_notebook
 ---
-
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
-
-```{r}
-plot(cars)
-```
-
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
-
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
-
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
-
 
 ```{r}
 # Install from CRAN
@@ -27,20 +12,6 @@ install.packages('RTransferEntropy')
 # load the package
 library(RTransferEntropy)
 ```
-```{r}
-set.seed(12345)
-n <- 2500
-x <- rep(0, n + 1)
-y <- rep(0, n + 1)
-
-for (i in 2:(n + 1)) {
-  x[i] <- 0.2 * x[i - 1] + rnorm(1, 0, 2)
-  y[i] <- x[i - 1] + rnorm(1, 0, 2)
-}
-
-x <- x[-1]
-y <- y[-1]
-```
 
 ```{r}
 install.packages('future')
@@ -48,19 +19,6 @@ library(future)
 # enable parallel processing for all future transfer_entropy calls
 # use multicore on unix machines for better performance
 plan(multisession)
-```
-
-
-```{r}
-set.seed(12345)
-shannon_te <- transfer_entropy(x, y)
-#> Shannon's entropy on 8 cores with 100 shuffles.
-#>   x and y have length 2500 (0 NAs removed)
-#>   [calculate] X->Y transfer entropy
-#>   [calculate] Y->X transfer entropy
-#>   [bootstrap] 300 times
-#> Done - Total time 6.52 seconds
-shannon_te
 ```
 
 ```{r}
@@ -76,10 +34,6 @@ sent <- read.csv("D:\\SP project\\gt_ethereum.csv")
 ```{r}
 btc_return <- as.numeric(btc$return)
 btc_return <- btc_return[2:1766]
-
-```
-
-```{r}
 sent_return <- as.numeric(sent$return)
 sent_return <- sent_return[2:1766]
 ```
@@ -89,46 +43,16 @@ shannon_te <- transfer_entropy(sent_return, btc_return)
 ```
 
 ```{r}
-shannon_te
-
-```
-
-```{r}
 shannon_te2 <- transfer_entropy(sent_return, btc_return, lx = 5, ly = 5)
-```
-```{r}
-shannon_te2
-```
-```{r}
 sent_return_3 <- sent_return[2:1763]
-```
-
-```{r}
 btc_return_3 <- btc_return[5:1766]
-```
-```{r}
 shannon_te_3 <- transfer_entropy(sent_return_3, btc_return_3)
-```
-```{r}
-shannon_te_3
-```
-
-```{r}
 sent_return_1 <- sent_return[2:1765]
 btc_return_1 <- btc_return[3:1766]
 shannon_te_1 <- transfer_entropy(sent_return_1, btc_return_1)
-shannon_te_1
-
 shannon_te_11 <- transfer_entropy(sent_return_1, btc_return_1, lx = 2, ly = 2)
-shannon_te_11
-
 btc_return[1763:1765]
 btc_return_1[1762:1764]
-
-```
-
-
-```{r}
 sent_return_2 <- sent_return[2:1764]
 btc_return_2 <- btc_return[4:1766]
 shannon_te_2 <- transfer_entropy(sent_return_2, btc_return_2)
@@ -410,10 +334,5 @@ shannon2_te_66
 shannon2_te_77 <- transfer_entropy(sent2_return_7, btc_return[(1765-length(sent2_return)+8):1765], lx = 8, ly = 8)
 shannon2_te_77
 ```
-
-
-
-
-
 
 
