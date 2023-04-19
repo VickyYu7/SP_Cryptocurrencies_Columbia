@@ -6,19 +6,22 @@ This project studies the effect of market sentiment indices on cryptocurrency re
 The project is organized into the following components:
 
 - data processing: <br>
-'data_processing.py': This code processes the raw market sentiment data and prepares it for analysis.\n
-exploratory_analysis.ipynb: This notebook explores the historical patterns of cryptocurrency return and volatility.
-causality_test.ipynb: This notebook performs causality tests to investigate the relationship between market sentiment indices and cryptocurrency return and volatility.
-machine_learning.ipynb: This notebook uses machine learning algorithms to predict cryptocurrency return and volatility based on market sentiment indices.
-deep_learning.ipynb: This notebook uses deep learning models to predict cryptocurrency return and volatility based on market sentiment indices.
+'google_trend_interpolate.ipynb': This code interpolates the raw weekly google trend data on 6 search strings into daily data for later use.<br>
+'sentiment_interpolate_10.ipynb': This notebook interpolates the raw news sentiment index data into daily data without gaps for later use.<br>
+'sentiment_interpolate_78.ipynb': This notebook interpolates the raw weekly CBDI sentiment indices data into daily data without gaps for later use.<br>
+'data_interpolation_other.ipynb': This notebook interpolates all other raw crypto data and raw sentiment data into daily data without gaps for later use.<br>
+<br>
+- historical pattern: <br>
+'Volatility_graph.ipynb': This notebook computes the returns, 30-day rolling volatility and changes in volatility for all studies indices, and visualizes all of these.<br>
+
 
 ## Installation and Setup
 To run this project, you will need to install the following dependencies:
-numpy
-pandas
-matplotlib
-scikit-learn
-tensorflow
+- numpy
+- pandas
+- matplotlib
+- scikit-learn
+- keras & tensorflow
 
 To run the project, simply open the desired notebook in Jupyter or another Python IDE and run the cells.
 
