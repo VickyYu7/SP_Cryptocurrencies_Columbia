@@ -5,7 +5,7 @@ This project studies the effect of market sentiment indices on cryptocurrency re
 ## Project Structure
 The project is organized into the following components:
 
-- data processing: \n
+- data processing: '\n'
 'data_processing.py': This code processes the raw market sentiment data and prepares it for analysis.\n
 exploratory_analysis.ipynb: This notebook explores the historical patterns of cryptocurrency return and volatility.
 causality_test.ipynb: This notebook performs causality tests to investigate the relationship between market sentiment indices and cryptocurrency return and volatility.
