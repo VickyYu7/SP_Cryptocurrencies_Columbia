@@ -5,19 +5,19 @@ This project studies the effect of market sentiment indices on cryptocurrency re
 ## Project Structure
 The project is organized into the following components:
 
-- data processing: <br>
+<strong> Folder - data processing: </strong> <br>
 - 'google_trend_interpolate.ipynb': This code interpolates the raw weekly google trend data on 6 search strings into daily data for later use.<br>
-'sentiment_interpolate_10.ipynb': This notebook interpolates the raw news sentiment index data into daily data without gaps for later use.<br>
-'sentiment_interpolate_78.ipynb': This notebook interpolates the raw weekly CBDI sentiment indices data into daily data without gaps for later use.<br>
-'data_interpolation_other.ipynb': This notebook interpolates all other raw crypto data and raw sentiment data into daily data without gaps for later use.<br>
+- 'sentiment_interpolate_10.ipynb': This notebook interpolates the raw news sentiment index data into daily data without gaps for later use.<br>
+- 'sentiment_interpolate_78.ipynb': This notebook interpolates the raw weekly CBDI sentiment indices data into daily data without gaps for later use.<br>
+- 'data_interpolation_other.ipynb': This notebook interpolates all other raw crypto data and raw sentiment data into daily data without gaps for later use.<br>
 <br>
 
-- historical pattern: <br>
-'Volatility_graph.ipynb': This notebook computes the returns, 30-day rolling volatility and changes in volatility for all studies indices, and visualizes all of these.<br>
-'return_corr_summary.ipynb': This notebook calculates the 100-day rolling correlation between each sentiment index return (exclude google trends indices) and crypto returns, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
-'return_corr_summary_gt.ipynb': This notebook calculates the 100-day rolling correlation between each google trend index return and crypto returns, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
-'rvrv_corr_summary.ipynb': This notebook calculates the 100-day rolling correlation between each sentiment index (exclude google trends indices) daily change in 30-day rolling volatility and crypto change in volatility, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
-'rvrv_corr_summary_gt.ipynb': This notebook calculates the 100-day rolling correlation between each google trend index daily change in 30-day rolling volatility and crypto change in volatility, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
+<strong> Folder - historical pattern:</strong> <br>
+- 'Volatility_graph.ipynb': This notebook computes the returns, 30-day rolling volatility and changes in volatility for all studies indices, and visualizes all of these.<br>
+- 'return_corr_summary.ipynb': This notebook calculates the 100-day rolling correlation between each sentiment index return (exclude google trends indices) and crypto returns, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
+- 'return_corr_summary_gt.ipynb': This notebook calculates the 100-day rolling correlation between each google trend index return and crypto returns, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
+- 'rvrv_corr_summary.ipynb': This notebook calculates the 100-day rolling correlation between each sentiment index (exclude google trends indices) daily change in 30-day rolling volatility and crypto change in volatility, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
+- 'rvrv_corr_summary_gt.ipynb': This notebook calculates the 100-day rolling correlation between each google trend index daily change in 30-day rolling volatility and crypto change in volatility, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
 <br>
 
 ## Installation and Setup
