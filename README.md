@@ -7,6 +7,8 @@ The project is organized into the following components:
 
 <strong> Folder - variable construction: </strong> <br>
 - 'Fear_Greed_Crawling.ipynb': This code shows how to web scrap the necessary crypto fear&greed index data from the official website using the provided API key.<br>
+- 'Bitcoin_Vader.ipynb': This code shows how to extract daily sentiment from tweets containing 'Bitcoin' using VADER Analysis.<br>
+- 'Bitcoin_Crash_Vader.ipynb': This code shows how to extract daily sentiment from tweets containing 'Bitcoin Crash' using VADER Analysis.<br>
 <br>
 
 <strong> Folder - data processing: </strong> <br>
@@ -25,7 +27,7 @@ The project is organized into the following components:
 <br>
 
 <strong> Folder - causality tests:</strong> <br>
-- 'granger_test.ipynb': This notebook performs the two-way granger causality test on all sentiment indices against bitcoin, based on returns and volatilities. A max lag of 5 days is applied. The resulting significance table is provided. <br>
+- 'granger_test.ipynb' & 'Granger_Causality_Test.ipynb': These two notebooks perform the two-way granger causality test on all sentiment indices against bitcoin, based on returns and volatilities. A max lag of 5 days is applied. The resulting significance table is provided. <br>
 - 'transfer entropy.Rmd': Based on the 'RTransferEntropy' package in R, this R notebook performs the two-way transfer entropy test on all sentiment indices against bitcoin, based on returns. Lags from 1 to 7 days are studied for both directions. 
 - 'transfer_entropy_plot.ipynb': The visualization of resulting information flow for each sentiment index is provided. <br>
 <br>
