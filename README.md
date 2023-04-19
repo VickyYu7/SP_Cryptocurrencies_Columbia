@@ -14,7 +14,11 @@ The project is organized into the following components:
 
 - historical pattern: <br>
 'Volatility_graph.ipynb': This notebook computes the returns, 30-day rolling volatility and changes in volatility for all studies indices, and visualizes all of these.<br>
-
+'return_corr_summary.ipynb': This notebook calculates the 100-day rolling correlation between each sentiment index return (exclude google trends indices) and crypto returns, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
+'return_corr_summary_gt.ipynb': This notebook calculates the 100-day rolling correlation between each google trend index return and crypto returns, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
+'rvrv_corr_summary.ipynb': This notebook calculates the 100-day rolling correlation between each sentiment index (exclude google trends indices) daily change in 30-day rolling volatility and crypto change in volatility, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
+'rvrv_corr_summary_gt.ipynb': This notebook calculates the 100-day rolling correlation between each google trend index daily change in 30-day rolling volatility and crypto change in volatility, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
+<br>
 
 ## Installation and Setup
 To run this project, you will need to install the following dependencies:
@@ -24,7 +28,8 @@ To run this project, you will need to install the following dependencies:
 - scikit-learn
 - keras & tensorflow
 
-To run the project, simply open the desired notebook in Jupyter or another Python IDE and run the cells.
+To run the project, first download the crypto data from any open source coin exchange. Download publicly available market sentiment indices (news sentiment, fear and greed, S&P 500 Twitter, google trends, etc.) and construct twitter sentiment indices following steps in ' ' (Twitter API required). With all data ready, then process the data through files in 'data-processing'. Analyze the data following necessary tests and models.
+
 
 ## Usage
 To use this project, follow these steps:
