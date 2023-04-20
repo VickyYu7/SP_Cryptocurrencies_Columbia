@@ -33,6 +33,16 @@ The project is organized into the following components:
 - 'transfer_entropy_plot.ipynb': The visualization of resulting information flow for each sentiment index is provided. <br>
 <br>
 
+<strong> Folder - Regression & Boost:</strong> <br>
+- 'Compare.ipynb': This notebook is about two Boost model: XGboost & Gradient boost for using sentiment indices on crypto directionality forcaset. Four different models are created for each crypto index(BTC, ETH, SPCBDM, SPCBXL), which are with & without sentiment<br>
+- 'Linear Regression.ipynb': This notebook uses Linear regression to analyze the directionality of 'Bitcoin', 'Ether', SPCBXL, and SPCBDM with 15 sentiment indexes & no control varible.<br>
+- 'Statsmodel.ipynb' : This notebook uses logistic regression to analyze the directionality of 'Bitcoin', 'Ether', SPCBXL, and SPCBDM with 15 sentiment indexes & no control varible.<br>
+- 'Lag Regression.ipynb': This notebook uses logistic regression to analyze the directionality of 'Bitcoin', 'Ether', SPCBXL, and SPCBDM. The Predictors here is the Lag varible from the previous causality test.<br>
+- 'Russell&VIX.ipynb': This notebook uses logistic regression to analyze the directionality of 'Bitcoin', 'Ether', SPCBXL, and SPCBDM with 15 sentiment indexes. The control varible here is only Ruseell 2000 & VIX.<br>.<br>
+- 'ONLY VIX.ipynb': This notebook uses logistic regression to analyze the directionality of 'Bitcoin', 'Ether', SPCBXL, and SPCBDM with 15 sentiment indexes. The control varible here is only VIX.<br>
+- 
+<br>
+
 <strong> Folder - deep learning:</strong> <br>
 - 'LSTM_final_version.ipynb': This notebook is about LSTM models for verifying the impact of sentiment indices on crypto prices forcast. Four different models are built for each crypto index (BTC, ETH, SPCBDM, SPCBXL), which are with/without sentiment & with/without shifted price.<br>
 <br>
@@ -61,4 +71,4 @@ We found that market sentiment indices have some significant impact on cryptocur
 We used the Crypto Fear & Greed index data from "alternative.me", two CBDI indices developed by Yizhi W. et. al., the news sentiment index developed by Adam Hale Shapiro et.al. for academic research purpose. We would like to thank the authors for their contribution.
 
 ## Contact Information
-If you have any questions or would like to collaborate on this project, please contact [yy3256@columbia.edu, wy2407@columbia.edu].
+If you have any questions or would like to collaborate on this project, please contact [yy3256@columbia.edu, wy2407@columbia.edu, gz2343@columbia.edu].
