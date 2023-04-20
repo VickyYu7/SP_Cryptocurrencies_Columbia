@@ -32,6 +32,10 @@ The project is organized into the following components:
 - 'transfer_entropy_plot.ipynb': The visualization of resulting information flow for each sentiment index is provided. <br>
 <br>
 
+<strong> Folder - deep learning:</strong> <br>
+- 'LSTM_final_version.ipynb': This notebook is about LSTM models for verifying the impact of sentiment indices on crypto prices forcast. Four different models are built for each crypto index (BTC, ETH, SPCBDM, SPCBXL), which are with/without sentiment & with/without shifted price.<br>
+<br>
+
 ## Installation and Usage
 To run this project, you will need to install the following dependencies:
 - numpy
