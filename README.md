@@ -27,7 +27,7 @@ The project is organized into the following components:
 <br>
 
 <strong> Folder - causality tests:</strong> <br>
-- 'granger_test.ipynb' & 'Granger_Causality_Test.ipynb': These two notebooks perform the two-way granger causality test on all sentiment indices against bitcoin, based on returns and volatilities. A max lag of 5 days is applied. The resulting significance table is provided. <br>
+- 'Granger_Causality_Test.ipynb': This notebook performs the two-way granger causality test on all sentiment indices against bitcoin, based on returns and volatilities. A max lag of 5 days is applied. The resulting significance table is provided. <br>
 - 'transfer entropy.Rmd': Based on the 'RTransferEntropy' package in R, this R notebook performs the two-way transfer entropy test on all sentiment indices against bitcoin, based on returns. Lags from 1 to 7 days are studied for both directions. 
 - 'transfer_entropy_plot.ipynb': The visualization of resulting information flow for each sentiment index is provided. <br>
 <br>
@@ -41,23 +41,23 @@ To run this project, you will need to install the following dependencies:
 - numpy
 - pandas
 - matplotlib
-- scikit-learn
+- scikit-learn & statsmodels
 - keras & tensorflow
-
-To run the project, first download the crypto data from any open source coin exchange. Download publicly available market sentiment indices (news sentiment, fear and greed, S&P 500 Twitter, google trends, etc.) and construct twitter sentiment indices following steps in ' ' (Twitter API required). With all data ready, then process the data through files in 'data-processing'. Analyze the data following necessary tests and models.
+- nltk
 <br>
 
 To use this project, follow these steps:
-Run data_processing.py to process the raw market sentiment data.
-Open exploratory_analysis.ipynb to explore the historical patterns of cryptocurrency return and volatility.
-Open causality_test.ipynb to investigate the relationship between market sentiment indices and cryptocurrency return and volatility.
-Open machine_learning.ipynb to use machine learning algorithms to predict cryptocurrency return and volatility based on market sentiment indices.
-Open deep_learning.ipynb to use deep learning models to predict cryptocurrency return and volatility based on market sentiment indices.
-Results and Visualizations
-We found that market sentiment indices have a significant impact on cryptocurrency return and volatility. In particular, we found that [insert key findings here]. We also created several visualizations to demonstrate these findings, which can be found in the notebooks.
+- first download the crypto data from any open source coin exchange. Download publicly available market sentiment indices (news sentiment, fear and greed, S&P 500 Twitter, google trends, etc.) and construct twitter sentiment indices following steps in 'Bitcoin_Vader.ipynb' (Twitter API required)  <br>
+- Use notebooks in 'historical_pattern' folder to explore the historical patterns of cryptocurrency return and volatility, and conduct simple correlation tests. <br>
+- Use notebooks in 'causality_tests' folder to investigate the pairwise causality between market sentiment indices and cryptocurrency return and volatility.
+- Use notebooks in 'machine_learning' folder to run logistic regression on crypto directionality, linear regression on crypto volatility, and SVM, Boosting models on directionality. <br>
+- Use notebooks in 'deep_learning' folder to build LSTM and GRU models on predicting crypto prices/levels. 
+
+## Results and Visualizations
+We found that market sentiment indices have some significant impact on cryptocurrency return and volatility. In particular, we found that Twitter negative sentiment on 'bitcoin', Google trends on 'bitcoin', the crypto fear&greed and S&P 500 Twitter Index are particularly important in analyzing causality and making predictions. We also created several visualizations to demonstrate feature importances and prediction performances which can be found in the corresponding notebooks.
 
 ## Acknowledgements
-We used the [insert name of dataset/library here] library/dataset for [insert purpose here]. We would like to thank [insert authors of library/dataset here] for their contribution.
+We used the Crypto Fear & Greed index data from "alternative.me", two CBDI indices developed by Yizhi W. et. al., the news sentiment index developed by Adam Hale Shapiro et.al. for academic research purpose. We would like to thank the authors for their contribution.
 
 ## Contact Information
 If you have any questions or would like to collaborate on this project, please contact [yy3256@columbia.edu].
