@@ -38,9 +38,8 @@ The project is organized into the following components:
 - 'Linear Regression.ipynb': This notebook uses Linear regression to analyze the directionality of 'Bitcoin', 'Ether', SPCBXL, and SPCBDM with 15 sentiment indexes & no control varible.<br>
 - 'Statsmodel.ipynb' : This notebook uses logistic regression to analyze the directionality of 'Bitcoin', 'Ether', SPCBXL, and SPCBDM with 15 sentiment indexes & no control varible.<br>
 - 'Lag Regression.ipynb': This notebook uses logistic regression to analyze the directionality of 'Bitcoin', 'Ether', SPCBXL, and SPCBDM. The Predictors here is the Lag varible from the previous causality test.<br>
-- 'Russell&VIX.ipynb': This notebook uses logistic regression to analyze the directionality of 'Bitcoin', 'Ether', SPCBXL, and SPCBDM with 15 sentiment indexes. The control varible here is only Ruseell 2000 & VIX.<br>.<br>
+- 'Russell&VIX.ipynb': This notebook uses logistic regression to analyze the directionality of 'Bitcoin', 'Ether', SPCBXL, and SPCBDM with 15 sentiment indexes. The control varible here is only Ruseell 2000 & VIX.<br>
 - 'ONLY VIX.ipynb': This notebook uses logistic regression to analyze the directionality of 'Bitcoin', 'Ether', SPCBXL, and SPCBDM with 15 sentiment indexes. The control varible here is only VIX.<br>
-- 
 <br>
 
 <strong> Folder - deep learning:</strong> <br>
