@@ -9,9 +9,10 @@ The project is organized into the following components:
 - 'Fear_Greed_Crawling.ipynb': This code shows how to web scrap the necessary crypto fear&greed index data from the official website using the provided API key.<br>
 - 'Bitcoin_Vader.ipynb': This code shows how to extract daily sentiment from tweets containing 'Bitcoin' using VADER Analysis.<br>
 - 'Bitcoin_Crash_Vader.ipynb': This code shows how to extract daily sentiment from tweets containing 'Bitcoin Crash' using VADER Analysis.<br>
+- Other variables were downloaded directly from CoinCodex.<br>
 <br>
 
-<strong> Folder - data processing: </strong> <br>
+<strong> Folder - data preprocessing: </strong> <br>
 - 'google_trend_interpolate.ipynb': This code interpolates the raw weekly google trend data on 6 search strings into daily data for later use.<br>
 - 'sentiment_interpolate_10.ipynb': This notebook interpolates the raw news sentiment index data into daily data without gaps for later use.<br>
 - 'sentiment_interpolate_78.ipynb': This notebook interpolates the raw weekly CBDI sentiment indices data into daily data without gaps for later use.<br>
@@ -22,8 +23,8 @@ The project is organized into the following components:
 - 'Volatility_graph.ipynb': This notebook computes the returns, 30-day rolling volatility and changes in volatility for all studies indices, and visualizes all of these.<br>
 - 'return_corr_summary.ipynb': This notebook calculates the 100-day rolling correlation between each sentiment index return (exclude google trends indices) and crypto returns, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
 - 'return_corr_summary_gt.ipynb': This notebook calculates the 100-day rolling correlation between each google trend index return and crypto returns, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
-- 'rvrv_corr_summary.ipynb': This notebook calculates the 100-day rolling correlation between each sentiment index (exclude google trends indices) daily change in 30-day rolling volatility and crypto change in volatility, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
-- 'rvrv_corr_summary_gt.ipynb': This notebook calculates the 100-day rolling correlation between each google trend index daily change in 30-day rolling volatility and crypto change in volatility, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
+- 'rvrv_corr_summary.ipynb': This notebook calculates the 100-day rolling correlation between changes in 30-day rolling volatility of each sentiment index (exclude google trends indices) and changes in 30-day rolling volatility of crypto, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
+- 'rvrv_corr_summary_gt.ipynb': This notebook calculates the 100-day rolling correlation between changes in 30-day rolling volatility of each google trend index daily and changes in volatility of crypto, with necessary 1, 3, 5, 7, 9 day lag applied. The best performing results are visualized.<br>
 <br>
 
 <strong> Folder - causality tests:</strong> <br>
@@ -60,4 +61,4 @@ We found that market sentiment indices have some significant impact on cryptocur
 We used the Crypto Fear & Greed index data from "alternative.me", two CBDI indices developed by Yizhi W. et. al., the news sentiment index developed by Adam Hale Shapiro et.al. for academic research purpose. We would like to thank the authors for their contribution.
 
 ## Contact Information
-If you have any questions or would like to collaborate on this project, please contact [yy3256@columbia.edu].
+If you have any questions or would like to collaborate on this project, please contact [yy3256@columbia.edu, wy2407@columbia.edu].
