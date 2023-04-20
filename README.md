@@ -40,6 +40,7 @@ The project is organized into the following components:
 - 'Russell&VIX.ipynb': This notebook uses logistic regression to analyze the directionality of 'Bitcoin', 'Ether', SPCBXL, and SPCBDM with 15 sentiment indexes. The control varible here is only Ruseell 2000 & VIX.<br>
 - 'ONLY VIX.ipynb': This notebook uses logistic regression to analyze the directionality of 'Bitcoin', 'Ether', SPCBXL, and SPCBDM with 15 sentiment indexes. The control varible here is only VIX.<br>
 - 'Compare.ipynb': This notebook is about two Boost model: XGboost & Gradient boost for using sentiment indices on crypto directionality forcaset. Four different models are created for each crypto index(BTC, ETH, SPCBDM, SPCBXL), which are with & without sentiment<br>
+- 'SVM_classifier.ipynb': This notebook is about SVM model for using sentiment indices on crypto directionality forcaset. Four different models are created for each crypto index(BTC, ETH, SPCBDM, SPCBXL), which are with & without sentiment<br>
 <br>
 
 <strong> Folder - deep learning:</strong> <br>
