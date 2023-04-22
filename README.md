@@ -12,7 +12,7 @@ The project is organized into the following components:
 - Other variables were downloaded directly from CoinCodex.<br>
 <br>
 
-<strong> Folder - data preprocessing: </strong> <br>
+<strong> Folder - data processing: </strong> <br>
 - 'google_trend_interpolate.ipynb': This code interpolates the raw weekly google trend data on 6 search strings into daily data for later use.<br>
 - 'sentiment_interpolate_10.ipynb': This notebook interpolates the raw news sentiment index data into daily data without gaps for later use.<br>
 - 'sentiment_interpolate_78.ipynb': This notebook interpolates the raw weekly CBDI sentiment indices data into daily data without gaps for later use.<br>
